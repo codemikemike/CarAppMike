@@ -7,7 +7,85 @@ namespace CarAppMike
     {
         static void Main(string[] args)
         {
+            //Liste til at gemme bilobjekter
+            List<Car> cars = new List<Car>
+            {
+                new Car("Toyota", "Corolla", 2020, "Red"),
+                new Car("Honda", "Civic", 2019, "Blue"),
+                new Car("Ford", "Focus", 2021, "Black")
+            };
 
+
+            
+
+
+            while (true)
+            {
+                Console.WriteLine("--carsystem menu--");
+                Console.WriteLine("1. Read Car Details");
+                Console.WriteLine("2. Drive");
+                Console.WriteLine("3. Calculate Trip Price");
+                Console.WriteLine("4. IsPalindrome");
+                Console.WriteLine("5. Print Car Details");
+                Console.WriteLine("6. Print All Team Cars");
+                Console.WriteLine("7. Afslut programmet");
+
+                Console.WriteLine("Vælg et menu nummer");
+                string choice = Console.ReadLine();
+                switch (choice)
+                {
+                    case "1":
+                        Console.WriteLine("Du har valgt at læse biloplysninger");
+                        PrintAllTeamCars(cars);
+
+
+                        // Kald en metode til at læse biloplysninger
+                        break;
+                    case "2":
+                        Console.WriteLine("Du har valgt at køre i bilen");
+                        // Kald en metode til at køre i bilen
+                        break;
+                    case "3":
+                        Console.WriteLine("Du har valgt at beregne turpris");
+                        // Kald en metode til at beregne turpris
+                        break;
+                    case "4":
+                        Console.WriteLine("Du har valgt at tjekke for palindrom");
+                        // Kald en metode til at tjekke for palindrom
+                        break;
+                    case "5":
+                        Console.WriteLine("Du har valgt at udskrive biloplysninger");
+                        // Kald en metode til at udskrive biloplysninger
+                        break;
+                    case "6":
+                        Console.WriteLine("Du har valgt at udskrive alle team biler");
+                        // Kald en metode til at udskrive alle team biler
+                        break;
+                    case "7":
+                        Console.WriteLine("Afslutter programmet...");
+                        return; // Afslutter programmet
+                    default:
+                        Console.WriteLine("Ugyldigt valg, prøv igen.");
+                        break;
+
+
+                }
+
+
+            }
+            
+            static void PrintAllTeamCars(List<Car> cars)
+            {
+                Console.WriteLine("Alle team biler:");
+                foreach (var car in cars)
+                {
+                    Console.WriteLine($"Mærke: {car.Brand}, Model: {car.model}, Årgang: {car.Year}, Farve: {car.color}");
+                }
+            }
+
+
+
+            /*
             Console.WriteLine("Indtast bilmærke: ");
             string brand = Console.ReadLine();
 
@@ -22,7 +100,7 @@ namespace CarAppMike
 
             Console.WriteLine($"Dette er biloplysningerne {brand} {model} {year} {gearType}");
 
-            
+
             Console.WriteLine("Indtast fueltype");
             string fuelType = Console.ReadLine();
 
@@ -56,7 +134,7 @@ namespace CarAppMike
 
         }
 
-        // This method calculates the amount of fuel needed for a given distance and fuel efficiency. 
+        // This method calculates the amount of fuel needed for a given distance and fuel efficiency.
         // Navnene i Metodens parametre forneden er ikke nødvendigvis det samme som navnene i Metoden der bliver kaldt i Main.
         // Console Writeline i Metoden er bare for at vise hvad der sker i Metoden. Normalt bruger man breakpoints.
         public static double CalculatefuelNeeded(double distance1, double kmPerLiter1)
@@ -72,6 +150,9 @@ namespace CarAppMike
             Console.WriteLine($"Vi udregner turen fuelnneeded: {fuelNeeded1} fuelprice {fuelPrice1}");
             return fuelNeeded1 * fuelPrice1;
         }
+ */
+        }
+
 
     }
 }
